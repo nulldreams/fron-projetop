@@ -1,0 +1,12 @@
+<section class="animes-section">
+    <img class="img-fluid rounded mdx-auto" src="{{anime.capa}}" alt="">
+    <p class="titulo">{{anime.nome}}</p>
+    <div class="box" infinite-scroll="loadMore()">
+        <!-- <div class="col-md-4 capas grow" ng-repeat="filme in filmes.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) | filterBy:['nome', 'info.qualidade', 'info.audio', 'info.lancamento', 'sinopse']:pesquisa">         -->
+        <ul>
+            <li ng-repeat="episodio in data" class="text-left">
+                    <a href="/anime/{{anime.path}}/{{episodio.numero}}" target="new_blank"><p><b>Episódio: </b>{{episodio.nome}}</p></a>
+            </li>
+        </ul>
+    </div>
+</section>

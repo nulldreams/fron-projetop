@@ -1,0 +1,24 @@
+<section class="hero">
+    <div class="imagem">
+        <img src="https://media.giphy.com/media/35nU79vBbeOm4/source.gif" alt="">
+    </div>
+    <div class="titulo">
+        <h3>Ta afim de curtir uma série no fim de semana?</h3>
+        <p>O {nome}, é o melhor lugar para você curtir!</p>
+    </div>
+</section>
+
+<section class="our-work" id="temas">
+    <h3 class="title">Nosso catálogo</h3>
+    <hr>
+
+    <ul class="grid">
+        <span ng-repeat="tema in temas track by $index">
+            <li class="large grow" ng-if="$index%2 == 0"><a href="/filmes/{{tema.path}}" target="new_blank"><p>{{tema.nome}}</p></a></li>
+            <li class="small grow" ng-if="$index%2 == 1"><a href="/filmes/{{tema.path}}" target="new_blank"><p>{{tema.nome}}</p></a></li>
+        </span>
+        <!-- <li class="large red grow"><p>Temas</p></li>
+        <li class="large red grow"><p>Temas</p></li>
+        <li class="small yellow grow"><p>Temas</p></li> -->
+        </div>
+</section>

@@ -1,0 +1,23 @@
+<div class="ver-filme">
+        <div class="item">
+                <iframe iframe-onload="teste()" id="teste" src="{{movie.url}}" scrolling="no" frameborder="0" width="100%" height="300"
+                        allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+        </div>
+        <div class="item">
+                <div class="informacoes">
+                        <div class="imagem">
+                                <img src="{{movie.imagem}}" alt="">
+                        </div>
+                        <div class="info">
+                                <p class="lead">{{movie.nome}}</p>
+                                <p class="lead sinopse text-justify">{{movie.sinopse}}</p>
+                                <p class="lead sinopse text-justify">
+                                        <strong>Lançamento: </strong> {{movie.info.lancamento}}</p>
+                                <p class="lead sinopse text-justify">
+                                        <strong>Tema: </strong> {{nomeTema}}</p>
+                                <span class="label label-primary info-adc">{{movie.info.audio}}</span>
+                                <span class="label label-primary info-adc">{{movie.info.qualidade}}</span>
+                        </div>
+                </div>
+        </div>
+</div>

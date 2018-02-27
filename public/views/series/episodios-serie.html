@@ -1,0 +1,36 @@
+<section class="episodios-section">
+    <div class="info-filme">
+        <div class="capa">
+            <img class="img-fluid rounded mdx-auto" src="{{serie.wallpaper}}" alt="">
+        </div>
+        <div class="info">
+            <h3>{{serie.nome}}</h3>
+            <p>{{serie.sinopse}}</p>
+            <p><span>Tempo médio</span>: {{serie.duracao}}</p>
+            <p><span>Lançamento</span>: {{serie.lancamento}}</p>
+            <p><span>Emissora</span>: {{serie.emissora}}</p>
+            <p><span>Audio</span>: {{serie.audio}}</p>
+        </div>
+    </div>
+    <div class="episodios">
+        <div class="temporadas">
+            <div class="item" ng-repeat="temporada in temporadas track by $index">
+                <button type="button" name="button" class="btn grow" ng-click="trocarTemporada($index, $event)">{{temporada}}</button>
+            </div>
+        </div>
+        <div class="opcoes" ng-if="ultimoBotao !== undefined">
+            <div class="opcao">
+                <h3>Legendado</h3>
+                <div class="episodio grow" ng-repeat="episodio in serie.episodios.legendado.temporadas[tempIndex] track by $index">
+                    <a href="serie/{{serie.path}}/{{$index}}/{{tempIndex}}/legendado">Ep. {{$index+1}} - {{episodio.complete.split('-')[2]}}</a>
+                </div>
+            </div>
+            <div class="opcao">
+                <h3>Dublado</h3>
+                <div class="episodio grow" ng-repeat="episodio in serie.episodios.dublado.temporadas[tempIndex] track by $index">
+                    <a href="serie/{{serie.path}}/{{$index}}/{{tempIndex}}/dublado">Ep. {{$index+1}} - {{episodio.complete.split('-')[2]}}</a>
+                </div>
+            </div>
+        </div>        
+    </div>
+</section>

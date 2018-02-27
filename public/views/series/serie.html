@@ -1,0 +1,41 @@
+<section class="anime-section" id="anime-info">
+        <div class="item">
+                <p class="text-muted text-center">{{epInfo.complete.split('-')[2]}}</p>
+                <!-- <div class="opcoes" style="margin: 3%;">
+                        <input type="checkbox" ng-model="pularAbertura" class="form-check-input"> Pular abertura
+                        <br>
+                        <input type="checkbox" ng-model="pularEnding" class="form-check-input"> Pular ending
+                </div> -->
+                <div class="videogular-container">
+                        <videogular vg-player-ready="onPlayerReady($API)" vg-complete="ProxEp()" vg-auto-play="true" vg-update-time="onUpdateTime($currentTime, $duration)" vg-theme="config.theme.url" vg-can-play="teste()">
+                                <vg-media vg-src="config.sources">
+                                </vg-media>
+
+                                <vg-controls vg-autohide="config.plugins.controls.autoHide" vg-autohide-time="config.plugins.controls.autoHideTime">
+                                        <!-- <div class='my-button iconButton' ng-disabled="numEp === 0"><a ng-click="EpAnterior()" target='_blank'>Anterior</a></div> -->
+                                        <vg-play-pause-button></vg-play-pause-button>
+                                        <vg-time-display>{{ currentTime | date:'mm:ss':'+0000' }}</vg-time-display>                                                                                
+                                        <vg-scrub-bar>
+                                                <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                                        </vg-scrub-bar>
+                                        <vg-time-display>{{ timeLeft | date:'mm:ss':'+0000' }}</vg-time-display>
+                                        <!-- <vg-time-display>{{ totalTime | date:'mm:ss':'+0000' }}</vg-time-display> -->
+                                        <vg-volume>
+                                                <vg-mute-button></vg-mute-button>
+                                                <vg-volume-bar></vg-volume-bar>
+                                        </vg-volume>
+                                        <vg-playback-button></vg-playback-button>
+                                        <vg-fullscreen-button></vg-fullscreen-button>
+                                        <!-- <div class='my-button iconButton' ng-disabled="numEp === anime.episodios.length"><a onClick="angular.element('#anime-info').scope().ProxEP()">Próximo</a></div> -->
+                                </vg-controls>
+                                <vg-overlay-play></vg-overlay-play>
+                                <vg-buffering></vg-buffering>                                
+                                <vg-poster vg-url='config.plugins.poster'></vg-poster>
+                        </videogular>
+                </div>
+                <div class="botoes">
+                        <button type="button" ng-disabled="numEp === 0" class="btn btn-info grow" style="float: left;" ng-click="EpAnterior()">Episódio Anterior</button>
+                        <button type="button" ng-disabled="numEp === anime.episodios.length-1" class="btn btn-info grow" style="float: right;" ng-click="ProxEp()">Próximo Episódio</button>
+                </div>
+        </div>
+</section>

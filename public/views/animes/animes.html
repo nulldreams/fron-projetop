@@ -1,0 +1,14 @@
+<section class="animes-section">
+    <div class="form-group">
+        <input type="text" class="form-control" ng-model="pesquisa" placeholder="Pesquisa">
+    </div>
+    <div class="box" infinite-scroll="loadMore()">
+        <!-- <div class="col-md-4 capas grow" ng-repeat="filme in filmes.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) | filterBy:['nome', 'info.qualidade', 'info.audio', 'info.lancamento', 'sinopse']:pesquisa">         -->
+        <div class="item grow" ng-repeat="anime in data | filterBy:['nome']:pesquisa">
+            <a href="/animes/episodios/{{anime.path}}" target="new_blank()">
+                <img class="img-fluid rounded mx-auto d-block" src="{{anime.capa}}" alt="{{anime.nome}}">
+            </a>
+            <p class="titulo">{{anime.nome}}</p>
+        </div>
+    </div>
+</section>

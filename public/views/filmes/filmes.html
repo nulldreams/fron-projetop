@@ -1,0 +1,14 @@
+<section class="filmes-section">
+    <div class="form-group">
+        <input type="text" class="form-control" ng-model="pesquisa" placeholder="Pesquisa">
+    </div>
+    <div class="row" infinite-scroll="loadMore()">
+        <!-- <div class="col-md-4 capas grow" ng-repeat="filme in filmes.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) | filterBy:['nome', 'info.qualidade', 'info.audio', 'info.lancamento', 'sinopse']:pesquisa">         -->
+        <div class="col-md-3 capas grow" ng-repeat="filme in data | filterBy:['nome', 'info.qualidade', 'info.audio', 'info.lancamento', 'sinopse']:pesquisa">
+            <a href="/{{filme.link}}" target="new_blank()">
+                <img class="rounded mx-auto d-block" src="{{filme.imagem}}" alt="{{filme.nome}}">
+            </a>
+            <p class="titulo">{{filme.nome}}</p>
+        </div>
+    </div>
+</section>
