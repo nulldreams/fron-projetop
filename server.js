@@ -15,6 +15,8 @@ app.use(express.static(__dirname + '/public'))
 const apiRoutes = express.Router()
 require('./app/routes')(app, apiRoutes)
 
-app.listen(port)
+app.listen(port, '0.0.0.0', (err) => {
+    console.log(err)
+})
 console.log('Magic happens on port ' + port)
 exports = module.exports = app
